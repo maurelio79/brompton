@@ -24,7 +24,7 @@
         var link = items[i].origLink;  
         var desc = items[i].summary.content;  
         //var pubDate = items[i].pubDate;
-        output += "<a href='" + link + "'><div class='blog_content'><h3>" + title + "</h3><p>" + desc + "</p></div></a>";  
+        output += "<div class='blog_content'><h3><a href='" + link + "'>" + title + "</a></h3><p>" + desc + "</p></div></a>";  
       }  
       // Place news stories in div tag  
       //document.getElementById('results').innerHTML = output;    
