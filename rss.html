@@ -8,17 +8,17 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
      <link rel="stylesheet" href="css/brompton-stuff.min.css" />
      <link rel="stylesheet" href="css/style.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	<script src="js/custom.js"></script>
 
   <script type='text/javascript'>  
     // Parses returned response and extracts  
     // the title, links, and text of each news story.  
-    function top_blog(o){  
+    function top_rss(o){  
       var items = o.query.results.item;  
       var output = '';  
       var no_items=items.length;  
@@ -34,7 +34,6 @@
       $("#results").append(output);
     }  
     </script>  
-
   </head>  
   <body>
 <div data-role="page" data-theme="f">
@@ -51,10 +50,10 @@
 					</ul>		 
 			</div>
     <!-- Div tag for stories results -->  
-    <div  data-role="content" data-theme="f" id="results">
+    <div  data-role="content"  id="results">
     <!-- The YQL statment will be assigned to src. -->  
 
-   <script src='http://query.yahooapis.com/v1/public/yql?q=select%20title%2Clink%2Cdescription%20from%20rss%20where%20url%3D%22http%3A%2F%2Fblog.brompton.co.uk%2F%3Ffeed%3Drss2%22&format=json&diagnostics=true&callback=top_blog'></script>
+    <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D%22http%3A%2F%2Fbrompton.co.uk%2Frss%22&format=json&diagnostics=true&callback=top_rss"></script>
 
     </div>
     <div data-role="footer" data-position="fixed" data-theme="f">

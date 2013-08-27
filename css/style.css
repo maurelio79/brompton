@@ -1,0 +1,46 @@
+.ui-grid-solo {
+	text-align: center;
+}
+
+.ui-grid-solo img {
+	border: 1px solid #f7931e;
+}
+
+.rss_content {
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px dashed #f7931e;
+	text-shadow: none;
+	font-size: 12px;
+	color: #fff;    
+    }
+
+.brompton-header {
+	height: 56px;
+}
+
+.ui-btn-right {
+	background-image: url("images/brompton-grid.png");
+	width: 48px;
+	height: 48px;
+}
+
+#popupPanel-popup {
+    right: auto !important;
+    left: 0 !important;
+}
+#popupPanel {
+    width: 300px;
+    border: 1px solid #000;
+    border-right: none;
+    background: rgba(0,0,0,.5);
+    margin: -1px 0;
+}
+#popupPanel ul {
+    margin: 1em 5px;
+}
+
+#popupPanel ul li{
+    margin-top: 2px;
+	line-height: 24px;
+}

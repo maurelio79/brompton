@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+
+<html lang="it-IT">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="DESCRIPTION" content="">
+<title>Brompton Stuff</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+
+  <script type='text/javascript'>  
+    // Parses returned response and extracts  
+    // the title, links, and text of each news story.  
+    function top_events(o){  
+      var items = o.query.results.div;  
+      var output = '';  
+      var no_items=items.length;  
+      for(var i=0;i<no_items;i++){  
+        var title = items[i].h5.a.content;  
+        var tempLink = items[i].a.href;
+		var link = tempLink.replace(tempLink,"http://www.brompton.co.uk" + tempLink);  
+        var tempImg = items[i].a.img.src;
+		var temp2Img = tempImg.replace("//","http://");
+		var whereis = temp2Img.indexOf("?");
+		var img = temp2Img.substring(0,whereis);  
+        //var pubDate = items[i].pubDate;
+        output += "<li><a href='" + link + "'><img src='" + img + "'>" + title + "</a></li>";  
+      }  
+      // Place news stories in div tag  
+      //document.getElementById('results').innerHTML = output;    
+      $("#results").append(output);
+    }  
+    </script>  
+    <style>
+#results li {
+	height: 55px;
+}
+            
+    </style>
+
+  </head>  
+  <body>
+<div data-role="page" data-theme="c" id="homepage">
+      <div data-role="header" data-theme="a" data-position="fixed">
+        <h1>Brompton Stuff</h1>
+            <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-ajax="false">VIDEO</a></li>
+                <li><a href="blog.html" data-ajax="false">BLOG</a></li>
+                <li><a href="forum.html" data-ajax="false">FORUM</a></li>
+            </ul>
+            </div>
+    </div>
+    <!-- Div tag for stories results -->  
+    <div  data-role="content" data-theme="c">
+    <!-- The YQL statment will be assigned to src. -->  
+	<ul data-role="listview" id="results">
+
+	</ul>
+    <script src="http://query.yahooapis.com/v1/public/yql?q=select%20a%2C%20h5%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.brompton.co.uk%2Fevents%22%20and%20compat%3D%22html5%22%20and%20xpath%3D'%2F%2Fdiv%5Bcontains(%40class%2C%22span6%22)%5D'&format=json&diagnostics=true&callback=top_events"></script>
+
+    </div>
+    <div data-role="footer" data-position="fixed" data-theme="a">
+            <div data-role="navbar">
+            <ul>
+                <li><a href="#homepage" data-ajax="false">ONE</a></li>
+                <li><a href="#two" data-ajax="false">TWO</a></li>
+                <li><a href="#three" data-ajax="false">THREE</a></li>
+                <li><a href="#four" data-ajax="false">FOUR</a></li>
+            </ul>
+            </div>
+    </div>
+</div>
+
+
+  </body>  
+</html>  

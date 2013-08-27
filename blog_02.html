@@ -8,9 +8,12 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+     <link rel="stylesheet" href="css/brompton-stuff.min.css" />
+     <link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script src="js/custom.js"></script>
 
   <script type='text/javascript'>  
     // Parses returned response and extracts  
@@ -24,7 +27,7 @@
         var link = items[i].origLink;  
         var desc = items[i].summary.content;  
         //var pubDate = items[i].pubDate;
-        output += "<div class='blog_content'><h3><a href='" + link + "'>" + title + "</a></h3><p>" + desc + "</p></div></a>";  
+        output += "<div class='rss_content'><h3><a href='" + link + "'>" + title + "</a></h3><p>" + desc + "</p></div></a>";  
       }  
       // Place news stories in div tag  
       //document.getElementById('results').innerHTML = output;    
@@ -32,51 +35,34 @@
     }  
     </script>  
 
-    <style>
-        .blog_content {
-            width: 100%;
-            margin: auto;
-            background-color: #fff;
-            -moz-box-shadow: 0 0 5px #888;
-            -webkit-box-shadow: 0 0 5px#888;
-            box-shadow: 0 0 5px #888;
-            padding: 5px;
-            color: #666;
-            font-size: 12px;
-            margin-bottom: 8px;
-            }
-      .blog_content h3 {
-            color: #666;
-            font-size: 14px;
-            }
-      #results a {
-			text-decoration: none;
-            }
-            
-    </style>
-
   </head>  
   <body>
-<div data-role="page" data-theme="c" id="homepage">
-      <div data-role="header" data-theme="a" data-position="fixed">
+<div data-role="page" data-theme="f" id="homepage">
+      <div data-role="header" data-theme="f" data-position="fixed" class="brompton-header">
         <h1>Brompton Stuff</h1>
-            <div data-role="navbar">
-            <ul>
-                <li><a href="index.html" data-ajax="false">VIDEO</a></li>
-                <li><a href="blog.html" data-ajax="false">BLOG</a></li>
-                <li><a href="forum.html" data-ajax="false">FORUM</a></li>
-            </ul>
-            </div>
-    </div>
+		<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" class="ui-btn-right" data-corners="false"></a>
+   	  </div>
+
+			<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+				<h3>Extra Suff</h3>
+					<ul data-role="listview">
+					<li><a href="youtube.html" data-ajax="false">Youtube video</a></li>
+					<li><a href="blog_02.html" data-ajax="false">My Orange Brompton</a></li>
+					</ul>		 
+			</div>
     <!-- Div tag for stories results -->  
-    <div  data-role="content" data-theme="c" id="results">
+    <div  data-role="content" data-theme="f" id="results">
     <!-- The YQL statment will be assigned to src. -->  
 
    <script src='http://query.yahooapis.com/v1/public/yql?q=select%20title%2CorigLink%2Csummary%20from%20feed%20where%20url%3D%22http%3A%2F%2Ffeeds.feedburner.com%2FMyOrangeBrompton%3Fformat%3Dxml%22&format=json&diagnostics=true&callback=top_blog'></script>
 
     </div>
-    <div data-role="footer" data-position="fixed" data-theme="a">
-		<img src="images/brompton.jpg" width="100%" />
+    <div data-role="footer" data-position="fixed" data-theme="f">
+			<div data-role="navbar" data-iconpos="left">
+				<ul>
+					<li><a href="index.html" data-icon="home" data-ajax="false">Home</a></li>
+				</ul>
+			</div>
     </div>
 </div>
 
