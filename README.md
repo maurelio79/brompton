@@ -5,6 +5,18 @@ Written in jquery mobile and YQL, this app retrive stuff about Brompton from dif
 
 <h4>CHANGELOG</h4>
 
+<p>28/08/2013</p>
+
+<b>First Release V 1.0</b>
+
+- RSS feed from Brompton.co.uk
+- RSS feed from Brompton.co.uk Blog
+- Techinacal video from Brompton.co.uk
+- Events from Brompton.co.uk
+- RSS feed from myorangebrompton.com
+- Videos from Youtube
+<hr />
+
 <p>27/08/2013</p>
 
 - Added blog, rss, technical video and events from brompton.co.uk
