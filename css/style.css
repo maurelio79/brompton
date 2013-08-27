@@ -18,10 +18,10 @@
 	height: 42px;
 }
 
-.ui-btn-right {
+.ui-btn-right-brompton {
 	background-image: url("images/brompton-grid.png");
-	width: 36px;
-	height: 36px;
+	width: 32px;
+	height: 32px;
 }
 
 h3.brompton-title {

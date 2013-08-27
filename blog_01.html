@@ -40,7 +40,7 @@
 <div data-role="page" data-theme="f">
       <div data-role="header" data-theme="f" data-position="fixed" class="brompton-header">
         <h1>Brompton Stuff</h1>
-		<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" class="ui-btn-right" data-corners="false"></a>
+		<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" class="ui-btn-right ui-btn-right-brompton" data-corners="false"></a>
    	  </div>
 
 			<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
@@ -58,10 +58,23 @@
    <script src='http://query.yahooapis.com/v1/public/yql?q=select%20title%2Clink%2Cdescription%20from%20rss%20where%20url%3D%22http%3A%2F%2Fblog.brompton.co.uk%2F%3Ffeed%3Drss2%22&format=json&diagnostics=true&callback=top_blog'></script>
 
     </div>
+	<div id="about" data-role="popup" class="ui-content" data-theme="a">
+	<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+		The stuff that you find in this app<br />
+		comes from other site: this app is<br />
+		just an aggregator.<br />
+		So, for this reason,<br />
+		Thanks to <a href="http://www.brompton.co.uk">Brompton.co.uk</a><br />
+		Thanks to <a href="http://myorangebrompton.com">myorangebrompton.com</a><br />
+		and of course<br />
+		Thanks to Brompton for this<br />
+		excellent folding bike!
+	</div>
     <div data-role="footer" data-position="fixed" data-theme="f">
-			<div data-role="navbar" data-iconpos="left">
+			<div data-role="navbar" data-iconpos="top">
 				<ul>
 					<li><a href="index.html" data-icon="home" data-ajax="false">Home</a></li>
+					<li><a href="#about" data-rel="popup" data-transition="slideup" data-position-to="window" data-icon="info">About</a></li>
 				</ul>
 			</div>
     </div>
