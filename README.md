@@ -3,6 +3,12 @@ Brompton Stuff
 A simple web app for Brompton lovers.<br />
 Written in jquery mobile and YQL, this app retrive stuff about Brompton from different web site.
 
+To test the application go to
+https://build.phonegap.com/apps/516223/share (Scan the code and follow the link)
+I tested it only on Android.
+
+Any comment is appreciated.
+
 <h4>CHANGELOG</h4>
 
 <p>28/08/2013</p>
