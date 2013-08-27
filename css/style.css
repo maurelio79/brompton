@@ -16,13 +16,17 @@
     }
 
 .brompton-header {
-	height: 56px;
+	height: 42px;
 }
 
 .ui-btn-right {
 	background-image: url("images/brompton-grid.png");
-	width: 48px;
-	height: 48px;
+	width: 36px;
+	height: 36px;
+}
+
+h3.brompton-title {
+	text-align: center;
 }
 
 #popupPanel-popup {
@@ -30,7 +34,7 @@
     left: 0 !important;
 }
 #popupPanel {
-    width: 300px;
+    width: 280px;
     border: 1px solid #000;
     border-right: none;
     background: rgba(0,0,0,.5);

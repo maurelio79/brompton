@@ -55,14 +55,14 @@
     -->
 
     <!-- Define app icon for each platform. -->
-    <icon src="images/icon.jpg" />
+    <icon src="css/images/icon.jpg" />
   
 
     <!-- Define app splash screen for each platform. -->
-    <gap:splash src="images/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="images/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="images/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="images/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="css/images/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="css/images/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="css/images/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="css/images/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
 
     <!--
         Define access to external domains.
