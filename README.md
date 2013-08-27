@@ -5,7 +5,9 @@ Written in jquery mobile and YQL, this app retrive stuff about Brompton from dif
 
 <h4>CHANGELOG</h4>
 
+<p>27/08/2013</p>
+
 <p>19/08/2013</p>
------------------
+<hr />
 First upload, video page working fine.
 Blog pages to fix.
