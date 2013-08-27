@@ -11,8 +11,7 @@
     margin: auto;
     border-bottom: 1px dashed #f7931e;
 	text-shadow: none;
-	font-size: 12px;
-	color: #fff;    
+	font-size: 12px; 
     }
 
 .brompton-header {
@@ -39,6 +38,7 @@ h3.brompton-title {
     border-right: none;
     background: rgba(0,0,0,.5);
     margin: -1px 0;
+	color: #fff;
 }
 #popupPanel ul {
     margin: 1em 5px;
@@ -48,3 +48,4 @@ h3.brompton-title {
     margin-top: 2px;
 	line-height: 24px;
 }
+
