@@ -15,32 +15,32 @@
 	<script src="js/jquery.mobile-1.3.2.min.js"></script>
 	<script src="js/custom.js"></script>
 
-
   <script type='text/javascript'>  
     // Parses refliped response and extracts  
     // the title, links, and text of each news story.  
-    function top_technical(o){  
-      var items = o.query.results.a;  
+    function top_blog(o){  
+      var items = o.query.results.item;  
       var output = '';  
       var no_items=items.length;  
       for(var i=0;i<no_items;i++){  
-        var title = items[i].content;  
-        var link = items[i].href;  
-        //var desc = items[i].description;  
+        var title = items[i].title;  
+        var link = items[i].link;  
+        var desc = items[i].description;  
         //var pubDate = items[i].pubDate;
-        output += "<li><a href='" + link + "'>" + title + "</li>";  
+        output += "<div class='rss_content'><h3><a href='" + link + "'>" + title + "</a></h3><p>" + desc + "</p></div></a>";  
       }  
       // Place news stories in div tag  
       //document.getElementById('results').innerHTML = output;    
       $("#results").append(output);
     }  
     </script>  
+
   </head>  
   <body>
-<div data-role="page" data-theme="f">
+<div data-role="page" data-theme="f" id="homepage">
       <div data-role="header" data-theme="f" data-position="fixed" class="brompton-header">
         <h1>Brompton Stuff</h1>
-        <a href="#popupPanel" data-rel="popup" data-transition="flip" data-position-to="window" data-role="button" class="ui-btn-right ui-btn-right-brompton" data-corners="false"></a>
+		<a href="#popupPanel" data-rel="popup" data-transition="flip" data-position-to="window" data-role="button" class="ui-btn-right ui-btn-right-brompton" data-corners="false"></a>
    	  </div>
 
 			<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
@@ -52,14 +52,11 @@
 					</ul>		 
 			</div>
     <!-- Div tag for stories results -->  
-	<h3 class="brompton-title"><a href="http://support.brompton.co.uk/entries/22325003-Technical-videos">Brompton.co.uk</a></h3>
-    <div  data-role="content" data-theme="f">
+	<h3 class="brompton-title"><a href="http://www.bromptoniano.me">Bromptoniano.me</a></h3>
+    <div  data-role="content" data-theme="f" id="results">
     <!-- The YQL statment will be assigned to src. -->  
-	<ul data-role="listview" id="results">
 
-	</ul>
-
-    <script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsupport.brompton.co.uk%2Fentries%2F22325003-technical-videos%22%20and%20compat%3D%22html5%22%20and%20xpath%3D'%2F%2Fdiv%5Bcontains(%40class%2C%22user_formatted%20header_section%20clearfix%22)%5D%2Ful%2Fli%2Fa'&format=json&diagnostics=true&callback=top_technical"></script>
+   <script src='http://query.yahooapis.com/v1/public/yql?q=select%20title%2C%20link%2C%20description%20%20from%20rss%20where%20url%3D%22http%3A%2F%2Filoapp.bromptoniano.me%2Fblog%2Fblog%3FRSS%22&format=json&diagnostics=true&callback=top_blog'></script>
 
     </div>
 	<div id="about" data-role="popup" class="ui-content" data-theme="a">
