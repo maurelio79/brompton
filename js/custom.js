@@ -1,9 +1,10 @@
+
 $( document ).on( "pageinit", function() {
 	$( "#popupPanel" ).on({
-		popupbeforeposition: function() {
+		popupbeforeposition: function() {	
 		    var h = $( window ).height();
-
 		    $( "#popupPanel" ).css( "height", h-2 );
 		}
 	});
 });
+

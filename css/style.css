@@ -9,9 +9,15 @@
 .rss_content {
     width: 100%;
     margin: auto;
-    border-bottom: 1px dashed #f7931e;
+    border-bottom: 1px solid #f7931e;
+	/*background: rgba(0,0,0,.7);*/
+	/*-webkit-box-shadow: inset 0 0 5px #888;
+	-moz-box-shadow: inset 0 0 5px #888;
+	box-shadow: inset 0 0 5px #888;*/
 	text-shadow: none;
 	font-size: 13px; 
+	padding: 2px;
+	/*margin-bottom: 2px;*/
     }
 
 .brompton-header {
@@ -36,8 +42,11 @@ h3.brompton-title {
     width: 280px;
     border: 1px solid #000;
     border-right: none;
+	-webkit-box-shadow: 5px 0px 5px -2px #888 ;
+	-moz-box-shadow: 5px 0px 5px -2px #888;
+	box-shadow: 5px 0px 5px -2px #888;
     background: rgba(0,0,0,.5);
-    margin: -1px 0;
+    margin:  0 -1px;
 	color: #fff;
 }
 #popupPanel ul {
