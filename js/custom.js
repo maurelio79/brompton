@@ -8,11 +8,3 @@ $( document ).on( "pageinit", function() {
 	});
 });
 
-$( document ).on( "pageinit", function() {
-	$( "#photo-thumbs" ).on({
-		popupbeforeposition: function() {	
-		    var h = $( window ).height();
-		    $( "#photo-thumbs" ).css( "height", h-2 );
-		}
-	});
-});
