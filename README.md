@@ -11,6 +11,13 @@ Any comment is appreciated.
 
 <h4>CHANGELOG</h4>
 
+<p>31/08/2013</p>
+
+<b>Release 1.0</b>
+
+- RSS feed from Bromptoniano.me
+<hr />
+
 <p>28/08/2013</p>
 
 <b>First Release V 1.0</b>
