@@ -17,8 +17,30 @@
 
   </head>  
   <body>
-<div data-role="page" data-theme="f" id="homepage">
+<div data-role="page" data-theme="f" id="facebook-page">
+
 <script>
+$("#facebook-page").on( "pageinit", function() {
+	$.getJSON('http://graph.facebook.com/133884966640734/albums?callback=?', function(json, status, xhr) {
+	var items = json.data;
+	var output = '';
+    var no_items=items.length;
+		for(var i=0;i<no_items;i++){  
+		var title = json.data[i].name;
+		var id = json.data[i].id;
+		var link = json.data[i].link;
+		output += "<li id='" + id + "'><a href='" + link + "' data-ajax='false'>" + title + "</a></li>";
+	}
+		$("#results").html(output);
+		$("#results").listview().listview('refresh');
+	});
+
+	$("#results").on( "click", "li", function(event, ui) {
+		pos = $(this).attr("id");
+		window.sessionStorage.setItem("album", pos);
+	});
+
+});
 
 </script>
       <div data-role="header" data-theme="f" data-position="fixed" class="brompton-header">
@@ -26,37 +48,27 @@
 		<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" class="ui-btn-right ui-btn-right-brompton" data-corners="false" ></a>
    	  </div>
 
-			<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
-					<h3>Extra Suff</h3>
-					<ul data-role='listview'>
-					<li><a href='youtube.html' data-ajax="false">Youtube video</a></li>
-					<li><a href='blog_02.html' data-ajax='false'>My Orange Brompton</a></li>
-					<li><a href='bromptoniano.html' data-ajax='false'>Bromptoniano.me</a></li>
-					</ul>
-					<!--<h3>Utilities</h3>
-					<ul data-role='listview'>
-					<li><a href='trackme.html' data-ajax="false">TracKMe</a></li>
-					<li><a href='routes.html' data-ajax='false'>My Routes</a></li>
-					</ul>-->
-			</div>
+		<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+				<h3>Extra Suff</h3>
+				<ul data-role='listview'>
+				<li><a href='youtube.html' data-ajax="false">Youtube video</a></li>
+				<li><a href='blog_02.html' data-ajax='false'>My Orange Brompton</a></li>
+				<li><a href='bromptoniano.html' data-ajax='false'>Bromptoniano.me</a></li>
+				</ul>
+				<!--<h3>Utilities</h3>
+				<ul data-role='listview'>
+				<li><a href='trackme.html' data-ajax="false">TracKMe</a></li>
+				<li><a href='routes.html' data-ajax='false'>My Routes</a></li>
+				</ul>-->
+		</div>
 
     <!-- Div tag for stories results -->  
-    <div  data-role="content" data-theme="f" id="results">
-		<div class="ui-grid-solo">
-			<p>Brompton! The folding bike</p>
-			<div class="ui-block-a">
-				<img src="css/images/DSC_0467.jpg" width="100%" /><br /><br />
-			</div>
+    <div  data-role="content" data-theme="f">
+		<ul data-role="listview" id="results">
+
+		</ul>
 		</div>
-		<div data-role="controlgroup">
-				<ul data-role="listview" data-mini="true">
-					<li><a href="rss.html" data-ajax="false">Brompton.co.uk RSS</a></li>
-					<li><a href="technical.html" data-ajax="false">Technical video</a></li>
-					<li><a href="events.html" data-ajax="false">Events</a></li>
-					<li><a href="blog_01.html" data-ajax="false">Brompton.co.uk BLOG</a></li>
-				</ul>
-		</div>
-	</div>
+
 		<div id="about" data-role="popup" class="ui-content" data-theme="a">
 		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 			The stuff that you find in this app<br />
@@ -77,8 +89,7 @@
 				</ul>
 			</div>
     </div>
+
 </div>
-
-
   </body>  
 </html>  
