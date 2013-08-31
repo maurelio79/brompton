@@ -13,7 +13,7 @@ Any comment is appreciated.
 
 <p>31/08/2013</p>
 
-<b>Release 1.0</b>
+<b>Release V 1.0</b>
 
 - RSS feed from Bromptoniano.me
 <hr />
