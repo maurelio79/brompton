@@ -35,12 +35,7 @@ margin: 2px;
 height: 80px;
 border: 1px solid #fff;
 }
-#photo-viewer-cont{
-width: 100%;
-}
-#photo-viewer-cont img{
-width: 100%;
-}
+
 </style>
   </head>  
   <body>
@@ -62,22 +57,19 @@ var title = $('#photo-title'),
 
 // album info
 $.getJSON('http://graph.facebook.com/' + gallery_id + '?callback=?', function(json, status, xhr) {
-  title.html('&nbsp;<a href="' + json.link + '" class=\"ui-link\">' + json.name + '</a><p>&nbsp;from ' + json.from.name + '</p>');
+  title.html("&nbsp;<a href='" + json.link + "' class=\"ui-link\">" + json.name + "</a><p>&nbsp;from '" + json.from.name + "'</p>");
 });
 
 // images
 $.getJSON('http://graph.facebook.com/' + gallery_id + '/photos/?limit=50&callback=?', function(json, status, xhr) {
   var imgs = json.data;
 
-  //viewer.attr('src', imgs[0].source)
-  //viewer.attr('alt', imgs[0].name)
-
   for (var i = 0, l = imgs.length - 1; i < l; i++) {
-    $('<a href=\"#photo-viewer-cont\" data-rel=\"popup\" data-role=\"button\" data-position-to=\"window\"><img src="' + imgs[i].picture + '" alt="' + imgs[i].name + '" data-fullsize="' + imgs[i].source + '"></a>').appendTo(thumbs);
+    $('<a href=\"#photo-viewer-cont\" data-rel=\"popup\"  data-position-to=\"window\"><img src="' + imgs[i].picture + '" alt="' + imgs[i].name + '" data-fullsize="' + imgs[i].source + '"></a>').appendTo(thumbs);
   }
-  //$("#float-menu").removeClass("float-menu-css").addClass("float-menu-css");
-  $(thumbs).on('click', 'img', function(e) {
-    //e.preventDefault();
+thumbs.trigger("create");
+  $(thumbs).on('click', 'img', function() {
+//	e.preventDefault();
     var viewer = $('#photo-viewer');
     var src = $(this).attr('data-fullsize');
 
@@ -111,7 +103,7 @@ $.getJSON('http://graph.facebook.com/' + gallery_id + '/photos/?limit=50&callbac
 		<div id='photo-thumbs-container'>
 			<div id='photo-thumbs'></div>
 		</div>
-		<div data-overlay-theme="a" data-corners="false" data-role="popup" id='photo-viewer-cont'>
+		<div data-overlay-theme="a" data-corners="false" data-role="popup" id="photo-viewer-cont">
 
 		</div>
     </div>
