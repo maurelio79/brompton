@@ -29,7 +29,8 @@ $("#facebook-page").on( "pageinit", function() {
 		var title = json.data[i].name;
 		var id = json.data[i].id;
 		var link = json.data[i].link;
-		output += "<li id='" + id + "'><a href='" + link + "' data-ajax='false'>" + title + "</a></li>";
+		//output += "<li id='" + id + "'><a href='" + link + "' data-ajax='false'>" + title + "</a></li>";
+		output += "<li id='" + id + "'><a href='album.html' data-ajax='false'>" + title + "</a></li>";
 	}
 		$("#results").html(output);
 		$("#results").listview().listview('refresh');
