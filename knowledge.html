@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+
+<html lang="it-IT">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="DESCRIPTION" content="">
+<title>Brompton Stuff</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+      <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+     <link rel="stylesheet" href="css/brompton-stuff.min.css" />
+     <link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+	<script src="js/custom.js"></script>
+
+
+  <script type='text/javascript'>  
+    // Parses reslideed response and extracts  
+    // the title, links, and text of each news story.  
+    function top_knowledge(o){  
+      var items = o.query.results.a;  
+      var output = '';  
+      var no_items=items.length;  
+      for(var i=0;i<no_items;i++){  
+        var title = items[i].title;  
+        var link = items[i].href;  
+        output += "<li><a href='http://support.brompton.co.uk" + link + "'>" + title + "</a></li>";  
+      }  
+      // Place news stories in div tag  
+      //document.getElementById('results').innerHTML = output;    
+      $("#results").append(output);
+    }  
+    </script>  
+
+  </head>  
+  <body>
+<div data-role="page" data-theme="f" id="youtube-page">
+     <div data-role="header" data-theme="f" data-position="fixed" class="brompton-header">
+        <h1>Brompton Stuff</h1>
+		<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" class="ui-btn-right ui-btn-right-brompton" data-corners="false"></a>
+   	  </div>
+
+			<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+				<h3>Extra Suff</h3>
+					<ul data-role="listview">
+					<li><a href="youtube.html" data-ajax="false">Youtube video</a></li>
+					<!--<li><a href='facebook.html' data-ajax="false">FBphoto</a></li>-->
+					<li><a href="blog_02.html" data-ajax="false">My Orange Brompton</a></li>
+					<li><a href='bromptoniano.html' data-ajax='false'>Bromptoniano.me</a></li>
+					</ul>		 
+			</div>
+    <!-- Div tag for stories results -->  
+    <div  data-role="content" data-theme="f">
+    <!-- The YQL statment will be assigned to src. -->  
+	<ul data-role="listview" id="results">
+
+	</ul>
+
+		<script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsupport.brompton.co.uk%2Fcategories%2F20049931-Support-for-bikes%2Frecent_entries%22%20and%20compat%3D%22html5%22%20and%20xpath%3D'%2F%2Fh1%5Bcontains(%40class%2C%22fade_truncation_outer%22)%5D%2Fspan%2Fa'&format=json&diagnostics=true&callback=top_knowledge"></script>
+
+    </div>
+	<div id="about" data-role="popup" class="ui-content" data-theme="a">
+	<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+		The stuff that you find in this app<br />
+		comes from other site: this app is<br />
+		just an aggregator.<br />
+		So, for this reason,<br />
+		Thanks to <a href="http://www.brompton.co.uk">Brompton.co.uk</a><br />
+		Thanks to <a href="http://myorangebrompton.com">myorangebrompton.com</a><br />
+		and of course<br />
+		Thanks to Brompton for this<br />
+		excellent folding bike!
+	</div>
+    <div data-role="footer" data-position="fixed" data-theme="f">
+			<div data-role="navbar" data-iconpos="top">
+				<ul>
+					<li><a href="index.html" data-icon="home" data-ajax="false">Home</a></li>
+					<li><a href="#about" data-rel="popup" data-transition="slideup" data-position-to="window" data-icon="info">About</a></li>
+				</ul>
+			</div>
+    </div>
+</div>
+
+
+  </body>  
+</html>  
