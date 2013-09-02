@@ -11,6 +11,13 @@ Any comment is appreciated.
 
 <h4>CHANGELOG</h4>
 
+<p>01/09/2013</p>
+
+<b>Release V 1.1</b>
+
+- Added knowledgebase page
+- Added search filter in pages
+
 <p>31/08/2013</p>
 
 <b>Release V 1.0</b>
