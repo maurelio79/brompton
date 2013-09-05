@@ -9,6 +9,9 @@ $( document ).on( "pageinit", function() {
 });
 
 
+
+
+/*
 (function($) {
     $.fn.imageResize = function(options) {
 
@@ -49,4 +52,4 @@ $( document ).on( "pageinit", function() {
 
     };
 })(jQuery);
-
+*/
