@@ -8,78 +8,25 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     
-      <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
-     <link rel="stylesheet" href="css/brompton-stuff.min.css" />
-     <link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+	<link rel="stylesheet" href="css/brompton-stuff.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/stylesTouch.css" />
+
 	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+	<script src="js/facebook.js"></script>
 	<script src="js/custom.js"></script>
-
-<style>
-#photo-thumbs-container{
-width: 100%;
-margin: auto;
-	background: rgba(247,147,30,.8);
-	-webkit-box-shadow: 0 0 5px #888;
-	-moz-box-shadow: 0 0 5px #888;
-	box-shadow: 0 0 5px #888;
-border: 1px solid #fff;
-}
-#photo-thumbs{
-width: 90%;
-margin: auto;
-padding: 20px;
-}
-#photo-thumbs img{
-margin: 2px;
-height: 80px;
-border: 1px solid #fff;
-}
-
-</style>
   </head>  
+
   <body>
 <div data-role="page" data-theme="f" id="album-page">
 
-<script type='text/javascript'>  
-$("#album-page").on( "pageinit", function() {
+	<script type='text/javascript'>  
+		$("#album-page").on( "pageinit", function() {
 			var album = window.sessionStorage.getItem("album");
-			$("#fb-photo-gallery").fbphotogallery(album);
-	
-});
-
-(function($){  
-$.fn.fbphotogallery = function (gallery){
-var title = $('#photo-title'),
-    viewer = $('#photo-viewer'),
-    thumbs = $('#photo-thumbs')
-    gallery_id=gallery;
-
-// album info
-$.getJSON('http://graph.facebook.com/' + gallery_id + '?callback=?', function(json, status, xhr) {
-  title.html("&nbsp;<a href='" + json.link + "' class=\"ui-link\">" + json.name + "</a><p>&nbsp;from '" + json.from.name + "'</p>");
-});
-
-// images
-$.getJSON('http://graph.facebook.com/' + gallery_id + '/photos/?limit=50&callback=?', function(json, status, xhr) {
-  var imgs = json.data;
-
-  for (var i = 0, l = imgs.length - 1; i < l; i++) {
-    $('<a href=\"#photo-viewer-cont\" data-rel=\"popup\"  data-position-to=\"window\"><img src="' + imgs[i].picture + '" alt="' + imgs[i].name + '" data-fullsize="' + imgs[i].source + '"></a>').appendTo(thumbs);
-  }
-thumbs.trigger("create");
-  $(thumbs).on('click', 'img', function() {
-//	e.preventDefault();
-    var viewer = $('#photo-viewer');
-    var src = $(this).attr('data-fullsize');
-
-    $("#photo-viewer-cont").html('<a href=\"#\" data-rel=\"back\" data-role=\"button\" data-theme=\"a\" data-icon=\"delete\" data-iconpos=\"notext\" class=\"ui-btn-right\">Close</a><img id=\"photo-viewer\" src=' + src + '></a>');
-	$("#photo-viewer-cont").trigger("create");
-
-  });
-});
-};
-})(jQuery);
+			$("#thumbs").fbphotogallery(album);
+		});
 	</script>  
 
       <div data-role="header" data-theme="f" data-position="fixed" class="brompton-header">
@@ -98,15 +45,9 @@ thumbs.trigger("create");
 
 	<!--<h3 class="brompton-title"><a href="http://www.brompton.co.uk">Brompton.co.uk</a></h3>-->
     <!-- Div tag for stories results -->  
-	<h3 id="photo-title"></h3>
-    <div  data-role="content"  id="fb-photo-gallery">
-		<div id='photo-thumbs-container'>
-			<div id='photo-thumbs'></div>
-		</div>
-		<div data-overlay-theme="a" data-corners="false" data-role="popup" id="photo-viewer-cont">
+	<h3 class="brompton-title"></h3>
 
-		</div>
-    </div>
+		<div data-role="content" data-theme="f" id="thumbs" class="thumbs" class="thumbs-fb"></div>
 
 	<div id="about" data-role="popup" class="ui-content" data-theme="a">
 	<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
@@ -130,7 +71,5 @@ thumbs.trigger("create");
 			</div>
     </div>
 </div>
-
-
   </body>  
 </html>  
