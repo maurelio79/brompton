@@ -5,6 +5,8 @@ Written in jquery mobile and YQL, this app retrive stuff about Brompton from dif
 
 To test the application go to<br />
 https://build.phonegap.com/apps/516223/share (Scan the code and follow the link)<br />
+Now available also on Play Store!<br />
+https://play.google.com/store/apps/details?id=com.phonegap.brompton_stuff&hl=it<br />
 I tested it only on Android.<br />
 
 Any comment is appreciated.
