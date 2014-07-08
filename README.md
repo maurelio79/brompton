@@ -13,6 +13,20 @@ Any comment is appreciated.
 
 <h4>CHANGELOG</h4>
 
+<p>08/07/2014</p>
+
+<b>Release 1.2.1</b>
+
+- Fixed diplay title for Myorange brompton blog
+
+<p>19/09/2013</p>
+
+<b>Release V 1.2</b>
+
+- Solved bug for youtube videos
+- Addedd photo gallery from Facebook Brompton profile
+- Notification bar is now visible
+
 <p>01/09/2013</p>
 
 <b>Release V 1.1</b>
